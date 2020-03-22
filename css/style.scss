@@ -1,0 +1,423 @@
+$mainColor: #1a85fe;
+body {
+	min-height: 100vh;
+}
+div {
+	box-sizing: border-box;
+}
+/*iphoneX 底部黑条*/
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+	/*导航操作栏上移*/
+	.footer-nav,
+	.buy-nav,
+	.exten-list,
+	.cart-nav,
+	.bottom-nav,
+	.weui-tabbar
+	{
+		padding-bottom: 0.64rem !important;
+	}
+}
+
+
+/* 单行文字溢出隐藏 */
+.ellipsis {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+/* 多行文字溢出隐藏 */
+@mixin many-ellipsis($colum) {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $colum;	
+	overflow: hidden;
+}
+/* 响应式图片 */
+.img-responsive {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+/* 垂直水平居中flex布局 */
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.img-center {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;
+}
+/* 弹出层 */
+.popup {
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100vh;
+	.mask {
+		position: absolute;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0, .4);
+	}
+}
+
+/* 底部导航 */
+.weui-tabbar {
+	position: fixed;
+	bottom: 0;
+	padding: .25rem 0 .15rem 0;
+	background-color: #fff;
+	z-index: 10;
+}
+.weui-tabbar__icon {
+	width: .56rem;
+	height: 0.56rem;
+	margin-bottom: .05rem;
+}
+.weui-tabbar__item.weui-bar__item--on .weui-tabbar__label {
+	color: #333;
+	font-weight: bold;
+}
+.weui-tabbar__label {
+	font-size: .35rem;
+	color: #999;
+}
+/* 顶部栏 */
+.weui-search-bar {
+	background-color: #fff;
+	border: none;
+	padding: .4rem .35rem;
+	&::before, &::after {display: none;}
+}
+.weui-search-bar__label {
+	background-color: #f7f7f7;
+	height: 0.8rem;
+	line-height: .8rem;
+}
+.weui-search-bar__form {
+	background-color: #F7F7F7;
+	height: 0.8rem;
+	line-height: .8rem;
+}
+.weui-search-bar__form:after {
+	border-color: #fff;
+	background-color: #f7f7f7;
+	// height: 0.8rem;
+	line-height: .8rem;
+	background-color: #F7F7F7;
+}
+.weui-search-bar.weui-search-bar_focusing .weui-search-bar__cancel-btn {
+	display: none !important;
+}
+.filter {
+	margin-right: .12rem;
+	font-size: .37rem;
+	color: #5a5a5a;
+}
+
+/* banner */
+.banner {
+	width: 8.99rem;
+	height: 4.83rem;
+	background-color: #d0d3d6;
+	border-radius: 0.2rem;
+	margin: .3rem auto;
+	overflow: hidden;
+	img {width: 100%;}
+}
+.swiper-pagination-bullet {
+	background: rgba(255,255,255,.5);
+	opacity: 1;
+}
+.swiper-pagination-bullet-active {
+	background: rgba(255,255,255,1);
+}
+.weui-flex {
+	flex-wrap: wrap;
+}
+.weui-grid {
+	width: 25%;
+	padding: .3rem 0;
+	&::after, &::before {
+		display: none;
+	}
+}
+.weui-grid__icon {
+	width: .8rem;
+	margin-bottom: .15rem;
+}
+.weui-grid__label {
+	color: #5A5A5A;
+}
+
+/* 楼盘列表 */
+.title {
+	font-family: 59--Regular;
+	font-size: 0.5rem;
+	font-weight: bold;
+	padding-left: .39rem;
+}
+.weui-media-box_appmsg .weui-media-box__hd {
+	width: 3.25rem;
+	height: 2.56rem;
+	margin-right: .4rem;
+}
+.weui-media-box_appmsg {
+	padding: .6rem .35rem;
+	align-items: flex-start;
+}
+.weui-media-box__title {
+	font-size: 0.45rem;
+	margin-bottom: .08rem;
+	font-weight: bold;
+}
+.weui-media-box__desc {
+	font-size: 0.35rem;
+	@include many-ellipsis(2);
+}
+.lanpan-list {
+}
+.price {
+		padding-top: .1rem;
+		font-size: 0.56rem;
+		color: #ff3739;
+		// font-weight: bold;
+		span {font-size: .32rem; font-weight: normal;}
+	}
+.weui-panel:after, .weui-panel:before {
+	display: none;
+}
+
+/* 公告栏 */
+.notice-wrap {
+	flex-wrap: nowrap;
+	white-space: nowrap;
+	padding: .4rem .4rem;
+	.notice-icon {
+		width: .5rem;
+	}
+	.notice {
+		padding: 0 .2rem;
+		color: #7d7d7d;
+		font-size: .35rem;
+		height: .45rem;
+		line-height: .45rem;
+		overflow: hidden;
+	}
+	.more-btn {
+		font-size: .35rem;
+		color: #7d7d7d;
+		margin-left: auto;
+	}
+}
+
+
+/* 楼盘页面 */
+.loupan-banner {
+	border-radius: 0;
+	.swiper-pagination-bullet {
+		background: rgba(255,255,255,1);
+		opacity: 1;
+		border-radius: 0;
+	}
+	.swiper-pagination-bullet-active {
+		background-color: #ff3b3d;
+	}
+}
+
+/* 楼盘详情 */
+.detail-banner {
+	height: 5.6rem;
+	img {width: 100%;}
+	.swiper-pagination {
+		width: 1.16rem;
+		height: 0.61rem;
+		background-color: rgba(0,0,0, .5);
+		border-radius: 0.3rem;
+		line-height: .61rem;
+		font-size: .4rem;
+		color: #fff;
+		bottom: .68rem;
+		right: .52rem;
+		left: auto;
+	}
+}
+.weui-navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #fff;
+	justify-content: flex-start;
+	align-items: baseline;
+	&::after {display: none;}
+}
+.weui-navbar__item {
+	width: 32%;
+	flex: auto;
+	font-size: 0.45rem;
+	padding: .25rem .45rem;
+	font-weight: bold;
+	color: #8b8b8b;
+	&:after {display: none;}
+}
+.weui-navbar__item.weui-bar__item--on {
+	background-color: transparent !important;
+	font-size: 0.54rem;
+	color: #333;
+	&::after {display: none !important;}
+}
+.describe {
+	position: relative;
+	width: 8.93rem;
+	padding: .45rem;
+	margin: .5rem auto;
+	background-color: #ffffff;
+	box-shadow: 0.03rem 0.06rem 0.39rem 0rem 
+		rgba(6, 0, 1, 0.08);
+	border-radius: 0.13rem;
+	.des-title {
+		font-size: 0.43rem;
+		font-weight: bold;
+		margin-bottom: .2rem;
+	}
+	.text {
+		font-size: .37rem;
+		color: #adada9;
+		line-height: 2em;
+		// margin-bottom: .4rem;
+	}
+	.follow {
+		position: absolute;
+		right: .45rem;
+		bottom: .45rem;
+	}
+}
+.info-item {
+	white-space: nowrap;
+	justify-content: flex-start;
+	align-items: baseline;
+	padding: .2rem .35rem;
+	font-size: .37rem;
+	.label {width: 20%;}
+	color: #adadad;
+	.right {
+		color: #333;
+	}
+	.icon {margin-left: auto; width: .8rem; transform: translateY(.15rem);}
+}
+.detail-img {
+	margin-top: .3rem;
+	img {width: 100%;}
+}
+.map img {width: 100%; margin: .3rem 0 0;}
+.pub-title {
+	font-size: .48rem;
+	font-weight: bold;
+	margin-left: .37rem;
+}
+.footer-nav {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 1.33rem;
+	z-index: 10;
+	flex-wrap: nowrap;
+	a {width: 50%; font-size: .45rem; background-color: #333333; text-align: center; color: #fff; height: 100%;}
+	a:last-child {
+		background-color: #ff3b3d;
+	}
+}
+
+/* 我的 */
+.personal-header {
+	padding: 1rem .5rem .86rem;
+	justify-content: flex-start;
+	align-items: flex-start;
+	background: url('../images/person-bg.png') no-repeat 0% 0%;
+	background-size: 80%;
+	.user-head {
+		width: 2rem;
+		height: 2rem;
+		border-radius: 50%;
+		margin-right: .35rem;
+	}
+	.user-info {
+		font-size: .37rem;
+		line-height: 2em;
+		span {display: block;}
+	}
+	.username {font-size: .45rem; font-weight: bold;}
+}
+
+
+.menu-item {
+	flex-wrap: nowrap;
+	font-size: .48rem;
+	padding: .3rem;
+	width: calc(100% - 1rem);
+	margin: 0 auto;
+	border-bottom: 1px solid #f6f6f6;
+	.more-btn {
+		width: .4rem;
+		margin-left: auto;
+	}
+}
+
+.news-body {
+	.pub-title {
+		font-size: .55rem;
+		margin-left: .4rem;
+		padding-bottom: .3rem;
+		border-bottom: 1px solid rgba(0,0,0,.1);
+	}
+}
+.news-item {
+	flex-wrap: nowrap;
+	font-size: .48rem;
+	padding: .3rem 0;
+	width: calc(100% - .8rem);
+	margin: 0 auto;
+	border-bottom: 1px solid #f6f6f6;
+	span {width: 80%;}
+	.more-btn {
+		width: .4rem;
+		margin-left: auto;
+	}
+}
+
+/* 登录 */
+.login-body {
+	padding: .5rem;
+	.title {text-align: center;}
+	.weui-agree {padding: .5rem 0;}
+}
+.login-form {
+	margin: .5rem auto;
+}
+.input-item {
+	padding: .35rem 0;
+	margin-bottom: .5rem;
+	border-bottom: 1px solid rgba(0,0,0, .1);
+	justify-content: flex-start;
+	.icon {width: .7rem;}
+	input {
+		padding-left: .5rem;
+		font-size: .45rem;
+	}
+}
+.sub-btn {
+	background-color: #ff3b3d;
+	border-radius: 0;
+}
