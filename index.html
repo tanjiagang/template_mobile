@@ -1,267 +1,249 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>jQuery WeUI</title>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+<head>
+	<meta charset="utf-8">
+	<title>首页</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+
+	<meta name="format-detection" content="telephone=no, email=no" />
+
+
+	<!-- 外部插件css -->
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+
+	
+	<script src="js/jquery.js"></script>
+
+	<script src="js/flexiable.js"></script>
+
+	<script src="js/swiper.min.js"></script>
+
+	<script src="js/wow.min.js"></script>
+	<script src="js/fastclick.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body style="background-color: #f1f2f7;">
+	<div class="index-header container">
+		<section class="search-wrap flex-center">
+			<img class="logo" src="images/logo.png" />
+			<div class="search flex-center">
+				<img class="search-icon" src="images/search-icon.png" />
+				<input class="search-inputt" placeholder="根据关键词搜索" />
+			</div>
+		</section>
 		
-		<meta name="description" content="">
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/weui.min.css">
-		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
-		<link rel="stylesheet" href="css/jquery-weui.min.css">
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<script src="js/flexiable.js"></script>
-		<script src="js/jquery-2.1.4.js"></script>
-		<script src="js/fastclick.js"></script>
-		<!-- <script src="js/jquery-weui.min.js"></script> -->
-		<script src="js/swiper.min.js"></script>
-		<script src="js/main.js"></script>
-	</head>
-
-	<body>
-		<!-- 顶部栏 -->
-		<div class="flex-center weui-search-bar" id="searchBar">
-			<!-- 城市选择 -->
-			<select class="filter">
-				<option>城市</option>
-				<option>南宁</option>
-				<option>北海</option>
-			</select>
-			<!-- 区域选择 -->
-			<select class="filter">
-				<option>区域</option>
-				<option>青秀</option>
-				<option>西乡塘</option>
-			</select>
-
-			<form class="weui-search-bar__form flex-center">
-				<div class="weui-search-bar__box">
-					<i class="weui-icon-search"></i>
-					<input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索" required="">
-					<a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
-				</div>
-				<label class="weui-search-bar__label" id="searchText">
-					<i class="weui-icon-search"></i>
-					<span>搜索</span>
-				</label>
-			</form>
-		</div>
-
-		<!-- banner -->
-		<div class="banner swiper-container">
+		<div class="index-banner swiper-container">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
-					<img src="images/banner.png">
-				</div>
-				<div class="swiper-slide">
-					<img src="images/banner.png">
-				</div>
-				<div class="swiper-slide">
-					<img src="images/banner.png">
+					<img src="images/index-banner.png" />
 				</div>
 			</div>
 			<div class="swiper-pagination"></div>
 		</div>
 		<script>
-			var mySwiper = new Swiper('.banner', {
-				autoplay: true, //可选选项，自动滑动
+			var bannerSwiper = new Swiper('.index-banner', {
+				speed: 1000,
 				pagination: {
-					el: '.swiper-pagination',
+					el: '.index-banner .swiper-pagination'
+				}
+			})
+		</script>
+	</div>
+	
+	<div class="menu-list container flex-center">
+		<a class="menu-item" href="#">
+			<div class="icon-wrap"><img src="images/menu-icon1.png" /></div>
+			纯享白酒
+		</a>
+		<a class="menu-item" href="#">
+			<div class="icon-wrap"><img src="images/menu-icon2.png" /></div>
+			精品红酒
+		</a>
+		<a class="menu-item" href="#">
+			<div class="icon-wrap"><img src="images/menu-icon3.png" /></div>
+			进口洋酒
+		</a>
+		<a class="menu-item" href="#">
+			<div class="icon-wrap"><img src="images/menu-icon4.png" /></div>
+			劲爽啤酒
+		</a>
+		<a class="menu-item" href="#">
+			<div class="icon-wrap"><img src="images/menu-icon5.png" /></div>
+			高档茶品
+		</a>
+		<a class="menu-item" href="#">
+			<div class="icon-wrap"><img src="images/menu-icon6.png" /></div>
+			浓香咖啡
+		</a>
+		<a class="menu-item" href="#">
+			<div class="icon-wrap"><img src="images/menu-icon7.png" /></div>
+			美妆个护
+		</a>
+		<a class="menu-item" href="#">
+			<div class="icon-wrap"><img src="images/menu-icon8.png" /></div>
+			 手机配件
+		</a>
+	</div>
+	
+	<!-- 消息中心 -->
+	<div class="notice-wrap flex-center">
+		<img src="images/notice-icon.png" />
+		<div class="notice-swiper swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					你们的特权又升级啦~会员周日全返充话费!
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<script>
+			var bannerSwiper = new Swiper('.notice-swiper', {
+				direction: 'vertical',
+				autoplay: {
+					delay: 3000
 				},
 			})
 		</script>
-
-		<!--  菜单栏 -->
-		<div class="weui-flex">
-			<a href="" class="weui-grid js_grid">
-				<div class="weui-grid__icon">
-					<img src="images/user-add-line.png" alt="">
-				</div>
-				<p class="weui-grid__label">
-					客户报备
-				</p>
-			</a>
-			<a href="" class="weui-grid js_grid">
-				<div class="weui-grid__icon">
-					<img src="images/parent-line.png" alt="">
-				</div>
-				<p class="weui-grid__label">
-					我的客户
-				</p>
-			</a>
-			<a href="" class="weui-grid js_grid">
-				<div class="weui-grid__icon">
-					<img src="images/team-line.png" alt="">
-				</div>
-				<p class="weui-grid__label">
-					我的团队
-				</p>
-			</a>
-			<a href="" class="weui-grid js_grid">
-				<div class="weui-grid__icon">
-					<img src="images/money-dollar-box-line.png" alt="">
-				</div>
-				<p class="weui-grid__label">
-					我的佣金
-				</p>
-			</a>
-			<a href="" class="weui-grid js_grid">
-				<div class="weui-grid__icon">
-					<img src="images/notification-2-line.png" alt="">
-				</div>
-				<p class="weui-grid__label">
-					公司动态
-				</p>
-			</a>
-			<a href="" class="weui-grid js_grid">
-				<div class="weui-grid__icon">
-					<img src="images/book-open-line.png" alt="">
-				</div>
-				<p class="weui-grid__label">
-					霍尔商学院
-				</p>
-			</a>
-			<a href="" class="weui-grid js_grid">
-				<div class="weui-grid__icon">
-					<img src="images/shopping-cart-2-line.png" alt="">
-				</div>
-				<p class="weui-grid__label">
-					霍尔商城
-				</p>
-			</a>
-			<a href="" class="weui-grid js_grid">
-				<div class="weui-grid__icon">
-					<img src="images/user-shared-2-line.png" alt="">
-				</div>
-				<p class="weui-grid__label">
-					推荐朋友
-				</p>
-			</a>
-			<a href="" class="weui-grid js_grid">
-				<div class="weui-grid__icon">
-					<img src="images/store-3-line.png" alt="">
-				</div>
-				<p class="weui-grid__label">
-					商品秀
-				</p>
-			</a>
-			<a href="" class="weui-grid js_grid">
-				<div class="weui-grid__icon">
-					<img src="images/building-line.png" alt="">
-				</div>
-				<p class="weui-grid__label">
-					商铺
-				</p>
-			</a>
-			<a href="" class="weui-grid js_grid">
-				<div class="weui-grid__icon">
-					<img src="images/building-4-line.png" alt="">
-				</div>
-				<p class="weui-grid__label">
-					写字楼
-				</p>
-			</a>
-			<a href="" class="weui-grid js_grid">
-				<div class="weui-grid__icon">
-					<img src="images/community-line.png" alt="">
-				</div>
-				<p class="weui-grid__label">
-					公寓
-				</p>
-			</a>
-		</div>
-
-		<!-- 公告 -->
-		<div class="notice-wrap flex-center">
-			<img class="notice-icon" src="images/notice.png">
-			<div class="notice  swiper-container">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide  ellipsis">
-						由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道由各种物质组成的巨型球状天体。
-					</div>
-					<div class="swiper-slide  ellipsis">
-						由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道由各种物质组成的巨型球状天体。
-					</div>
-					<div class="swiper-slide  ellipsis">
-						由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道由各种物质组成的巨型球状天体。
-					</div>
-				</div>
+	</div>
+	
+	<!-- 广告 -->
+	<div class="adver-wrap">
+		<img class="index-bg2" src="images/index-bg2.png" />
+		<img class="advertise-img" src="images/advertise-img.png" >
+	</div>
+	
+	<div class="list-swiper swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<h2>热卖区</h2>
+				<p>平台热销商品推荐</p>
 			</div>
-			<a class="more-btn" href="">更多 > </a>
-		</div>
-		<script>
-			var noticeSwiper = new Swiper('.notice', {
-				direction: 'vertical',
-				autoplay: true, //可选选项，自动滑动
-			})
-		</script>
-
-		<!-- 楼盘列表 -->
-		<div class="weui-panel weui-panel_access">
-			<h3 class="title">热销楼盘</h3>
-			<div class="lanpan-list weui-panel__bd">
-				<a href="楼盘详情.html" class="weui-media-box weui-media-box_appmsg">
-					<div class="weui-media-box__hd">
-						<img class="weui-media-box__thumb" src="images/loupan-img.png">
-					</div>
-					<div class="weui-media-box__bd">
-						<h4 class="weui-media-box__title ellipsis">包图软件园二期押一付三包图软件园二期押一付三</h4>
-						<p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道由各种物质组成的巨型球状天体。</p>
-						<p class="price"><span>均价：￥</span>1666<span>/m²</span></p>
-					</div>
-				</a>
-				<a href="楼盘详情.html" class="weui-media-box weui-media-box_appmsg">
-					<div class="weui-media-box__hd">
-						<img class="weui-media-box__thumb" src="images/loupan-img.png">
-					</div>
-					<div class="weui-media-box__bd">
-						<h4 class="weui-media-box__title ellipsis">标题二</h4>
-						<p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
-						<p class="price"><span>均价：￥</span>1666<span>/m²</span></p>
-					</div>
-				</a>
+			<div class="swiper-slide">
+				<h2>折扣区</h2>
+				<p>给您最实惠的商品</p>
 			</div>
-			<div class="weui-panel__ft">
-				<a href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link">
-					<div class="weui-cell__bd">查看更多</div>
-					<span class="weui-cell__ft"></span>
-				</a>
+			<div class="swiper-slide">
+				<h2>我要分享</h2>
+				<p>邀请好 友赢好礼</p>
 			</div>
 		</div>
-
+		<div class="swiper-pagination"></div>
+	</div>
+	<script>
+		var bannerSwiper = new Swiper('.list-swiper', {
+			slidesPerView: 'auto',
+		})
+	</script>
+	
+	
+	<!--  -->
+	<div class="tab-swiper swiper-container">
+		<div class="swiper-wrapper">
+			<a class="active swiper-slide" href="#">推荐</a>
+			<a class="swiper-slide" href="#">纯享白酒</a>
+			<a class="swiper-slide" href="#">精品红酒</a>
+			<a class="swiper-slide" href="#">进口洋酒</a>
+			<a class="swiper-slide" href="#">劲爽啤酒</a>
 		</div>
-
-		<!-- 底部导航 -->
-		<div class="weui-tabbar flex-center">
-			<a href="index.html" class="weui-tabbar__item  weui-bar__item--on">
-				<!-- <span class="weui-badge" style="position: absolute;top: -.4em;right: 1em;">8</span> -->
-				<div class="weui-tabbar__icon">
-					<img src="images/index.png" alt="">
-				</div>
-				<p class="weui-tabbar__label">首页</p>
-			</a>
-			<a href="楼盘.html" class="weui-tabbar__item">
-				<div class="weui-tabbar__icon">
-					<img src="images/loupan.png" alt="">
-				</div>
-				<p class="weui-tabbar__label">房源</p>
-			</a>
-			<a href="小秘书.html" class="weui-tabbar__item">
-				<div class="weui-tabbar__icon">
-					<img src="images/msg.png" alt="">
-				</div>
-				<p class="weui-tabbar__label">小秘书</p>
-			</a>
-			<a href="我的.html" class="weui-tabbar__item">
-				<div class="weui-tabbar__icon">
-					<img src="images/me.png" alt="">
-				</div>
-				<p class="weui-tabbar__label">我的</p>
-			</a>
+		<div class="swiper-pagination"></div>
+	</div>
+	<script>
+		var bannerSwiper = new Swiper('.tab-swiper', {
+			slidesPerView: 'auto',
+		})
+	</script>
+	
+	
+	<!-- 商品列表 -->
+	<div class="pro-list flex-center">
+		<div class="pro-item">
+			<span class="pro-tag">热卖商品</span>
+			<img class="pro-img" src="images/pro-img-small.png" />
+			<h3 class="pro-name">洋河镇浓香型白酒整箱特价清仓500毫升</h3>
+			<div class="pro-bottom flex-center">
+				<h2 class="pro-price"><span>￥</span>299</h2>
+				<a class="pro-btn flex-center" href="">立即购买</a>
+			</div>
 		</div>
-
-	</body>
-
+		<div class="pro-item">
+			<span class="pro-tag discount-tag">折扣商品</span>
+			<img class="pro-img" src="images/pro-img-small.png" />
+			<h3 class="pro-name">洋河镇浓香型白酒整箱特价清仓500毫升</h3>
+			<div class="pro-bottom flex-center">
+				<h2 class="pro-price"><span>￥</span>299</h2>
+				<a class="pro-btn flex-center" href="">立即购买</a>
+			</div>
+		</div>
+		<div class="pro-item">
+			<span class="pro-tag discount-tag">折扣商品</span>
+			<img class="pro-img" src="images/pro-img-small.png" />
+			<h3 class="pro-name">洋河镇浓香型白酒整箱特价清仓500毫升</h3>
+			<div class="pro-bottom flex-center">
+				<h2 class="pro-price"><span>￥</span>299</h2>
+				<a class="pro-btn flex-center" href="">立即购买</a>
+			</div>
+		</div>
+		<div class="pro-item">
+			<span class="pro-tag discount-tag">折扣商品</span>
+			<img class="pro-img" src="images/pro-img-small.png" />
+			<h3 class="pro-name">洋河镇浓香型白酒整箱特价清仓500毫升</h3>
+			<div class="pro-bottom flex-center">
+				<h2 class="pro-price"><span>￥</span>299</h2>
+				<a class="pro-btn flex-center" href="">立即购买</a>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 底部导航 -->
+	<footer class="foot-nav flex-center">
+		<a class="nav-item active" href="">
+			<img class="normal-icon" src="images/index-icon-active.png" />
+			<img class="active-icon" src="images/index-icon-active.png" />
+			首页
+		</a>
+		
+		<a class="nav-item" href="">
+			<img class="normal-icon" src="images/class-icon.png" />
+			<img class="active-icon" src="images/class-icon-active.png" />
+			分类
+		</a>
+		
+		<a class="nav-item" href="">
+			<img class="normal-icon" src="images/cart-icon.png" />
+			<img class="active-icon" src="images/cart-icon-active.png" />
+			<span class="num">3</span>
+			购物车
+		</a>
+		
+		<a class="nav-item" href="">
+			<img class="normal-icon" src="images/user-icon.png" />
+			<img class="active-icon" src="images/user-icon-active.png" />
+			我的
+		</a>
+	</footer>
+	
+	
+	<!-- 右侧导航 -->
+	<div class="side-nav">
+		<a class="nav-item flex-center">
+			<img src="images/service-icon.png" >
+		</a>
+		<a class="nav-item flex-center">
+			<img src="images/buy-icon.png" >
+		</a>
+		<a class="back-top nav-item flex-center">
+			<img src="images/up-icon.png" >
+		</a>
+	</div>
+</body>
 </html>
